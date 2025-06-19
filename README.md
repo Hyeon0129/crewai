@@ -36,7 +36,7 @@ pip install 'crewai[tools]'
 pip install selenium beautifulsoup4
 
 # Set your local LLM API endpoint
-export OPENAI_API_BASE=http://175.124.38.106:9676/
+export OPENAI_API_BASE=http://0.0.0.0/
 ```
 
 ### **2. Create a New Project (Optional)**
