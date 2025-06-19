@@ -33,10 +33,7 @@ nomad_project/
 # Install CrewAI and required tools
 pip install crewai
 pip install 'crewai[tools]'
-pip install selenium beautifulsoup4 markdown fpdf2
-# Optional: Set your local LLM API endpoint (Ollama)
-export OPENAI_API_BASE=http://localhost:11434/v1
-export OPENAI_API_KEY=dummy
+
 ```
 
 ### **2. Create a New Project (Optional)**
@@ -48,13 +45,7 @@ crewai create crew nomad_project
 ### **3. Run the Crew**
 ```bash
 # Execute the project
-PYTHONPATH=$(pwd)/nomad_project/src python -m nomad_project.main
-# Provide a topic to run a web-scraping report
-PYTHONPATH=$(pwd)/nomad_project/src python -m nomad_project.main "your topic here"
-# A `report.md` and `report.pdf` will be created in the project root
 
-# Alternatively you can run the crew via the CLI
-crewai run
 ```
 
 ---

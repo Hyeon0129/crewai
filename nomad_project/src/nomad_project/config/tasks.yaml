@@ -1,9 +1,6 @@
 scrape_task:
   description: >
-    Use Selenium to search the web for {topic}. Visit the top five results and
-    gather the page HTML for each after scrolling to the bottom.
-  expected_output: >
-    Combined HTML content from the five most relevant pages about {topic}
+
   agent: web_scraper
   tools:
     - selenium_scraper_tool
