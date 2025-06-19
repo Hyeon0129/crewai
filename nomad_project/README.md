@@ -39,6 +39,8 @@ This command initializes the nomad_project Crew, assembling the agents and assig
 
 This example, unmodified, will create a `report.md` file with the output of a research on LLMs in the root folder.
 
+The project now also includes a **Selenium** based scraper tool. When running `python main.py "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md`.
+
 ## Understanding Your Crew
 
 The nomad_project Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.

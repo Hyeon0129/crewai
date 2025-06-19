@@ -17,8 +17,9 @@ def run():
     """
     Run the crew.
     """
+    topic = sys.argv[1] if len(sys.argv) > 1 else 'AI LLMs'
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': topic,
         'current_year': str(datetime.now().year)
     }
     
@@ -66,3 +67,7 @@ def test():
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
+
+
+if __name__ == "__main__":
+    run()

@@ -1,3 +1,12 @@
+scrape_task:
+  description: >
+    Use Selenium to search the web for {topic} and provide the raw page content of the first result.
+  expected_output: >
+    HTML content from the top search result related to {topic}
+  agent: web_scraper
+  tools:
+    - selenium_scraper_tool
+
 research_task:
   description: >
     Conduct a thorough research about {topic}

@@ -2,6 +2,8 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+from nomad_project.tools import SeleniumScraperTool
+from crewai.project.annotations import tool
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -33,9 +35,26 @@ class NomadProject():
             verbose=True
         )
 
+    @agent
+    def web_scraper(self) -> Agent:
+        return Agent(
+            config=self.agents_config['web_scraper'],  # type: ignore[index]
+            verbose=True
+        )
+
+    @tool
+    def selenium_scraper_tool(self) -> SeleniumScraperTool:
+        return SeleniumScraperTool()
+
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
+    @task
+    def scrape_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['scrape_task'],  # type: ignore[index]
+        )
+
     @task
     def research_task(self) -> Task:
         return Task(
