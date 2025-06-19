@@ -1,8 +1,6 @@
 scrape_task:
   description: >
-    Use Selenium to search the web for {topic} and provide the raw page content of the first result.
-  expected_output: >
-    HTML content from the top search result related to {topic}
+
   agent: web_scraper
   tools:
     - selenium_scraper_tool
@@ -24,3 +22,4 @@ reporting_task:
     A fully fledged report with the main topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
+

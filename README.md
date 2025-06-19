@@ -33,10 +33,7 @@ nomad_project/
 # Install CrewAI and required tools
 pip install crewai
 pip install 'crewai[tools]'
-pip install selenium beautifulsoup4
 
-# Set your local LLM API endpoint
-export OPENAI_API_BASE=http://0.0.0.0/
 ```
 
 ### **2. Create a New Project (Optional)**
@@ -48,9 +45,7 @@ crewai create crew nomad_project
 ### **3. Run the Crew**
 ```bash
 # Execute the project
-python nomad_project/main.py
-# Provide a topic to run a web-scraping report
-python nomad_project/main.py "your topic here"
+
 ```
 
 ---

@@ -1,12 +1,36 @@
 #!/usr/bin/env python
 import sys
 import warnings
+import os
+from pathlib import Path
+from markdown import markdown
+from fpdf import FPDF
 
 from datetime import datetime
+
+# Allow running this file directly without installing the package
+if __package__ is None or __package__ == "":
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from nomad_project.crew import NomadProject
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+
+# Convert markdown report to PDF
+def _md_to_pdf(md_file: str, pdf_file: str) -> None:
+    """Create a simple PDF file from markdown text."""
+    try:
+        text = Path(md_file).read_text()
+    except FileNotFoundError:
+        return
+    html = markdown(text)
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.set_font("Arial", size=12)
+    for line in html.splitlines():
+        pdf.multi_cell(0, 10, line)
+    pdf.output(pdf_file)
 
 # This main file is intended to be a way for you to run your
 # crew locally, so refrain from adding unnecessary logic into this file.
@@ -25,6 +49,7 @@ def run():
     
     try:
         NomadProject().crew().kickoff(inputs=inputs)
+        _md_to_pdf("report.md", "report.pdf")
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 

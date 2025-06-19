@@ -39,7 +39,7 @@ This command initializes the nomad_project Crew, assembling the agents and assig
 
 This example, unmodified, will create a `report.md` file with the output of a research on LLMs in the root folder.
 
-The project now also includes a **Selenium** based scraper tool. When running `python main.py "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md`.
+
 
 ## Understanding Your Crew
 
@@ -54,3 +54,4 @@ For support, questions, or feedback regarding the NomadProject Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
