@@ -2154,14 +2154,12 @@ name = "nomad-project"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "beautifulsoup4" },
     { name = "crewai", extra = ["tools"] },
     { name = "selenium" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "beautifulsoup4", specifier = ">=4.12.2" },
     { name = "crewai", extras = ["tools"], specifier = ">=0.130.0,<1.0.0" },
     { name = "selenium", specifier = ">=4.21.0" },
 ]

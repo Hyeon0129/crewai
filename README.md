@@ -1,66 +1,61 @@
-# **Nomad Project - AI Agent Automation with CrewAI**
+# NomadProject Crew
 
-A personal project exploring automation using the **CrewAI** framework, focused on experimenting with multi-agent 
-systems and integrating local LLMs.
+Welcome to the NomadProject Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
----
+## Installation
 
-## **Goals**
-- Automate repetitive research and documentation tasks using AI agents  
-- Understand and apply CrewAI's core structure: **Agent**, **Task**, **Crew**  
-- Integrate with local LLMs such as **Ollama**, **Hermes 3**, and others  
-- Experiment with agent collaboration and role specialization  
+Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
+First, if you haven't already, install uv:
 
-
-## **Project Structure**
-```
-nomad_project/
-├── config/                # Configuration files
-│   ├── agents.yaml        # Agent definitions
-│   └── tasks.yaml         # Task definitions
-├── tools/                 # Custom tool implementations
-├── crew.py                # Crew and process configuration
-└── main.py                # Entry point for execution
-```
-
-
-
-## **Getting Started**
-
-### **1. Install Dependencies**
 ```bash
-# Install CrewAI and required tools
-pip install crewai
-pip install 'crewai[tools]'
-
+pip install uv
 ```
 
-### **2. Create a New Project (Optional)**
+Next, navigate to your project directory and install the dependencies:
+
+(Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
-# Use CrewAI CLI to create a new project (if needed)
-crewai create crew nomad_project
+crewai install
 ```
+### Customizing
 
-### **3. Run the Crew**
+**Add your `OPENAI_API_KEY` into the `.env` file**
+
+- Modify `src/nomad_project/config/agents.yaml` to define your agents
+- Modify `src/nomad_project/config/tasks.yaml` to define your tasks
+- Modify `src/nomad_project/crew.py` to add your own logic, tools and specific args
+- Modify `src/nomad_project/main.py` to add custom inputs for your agents and tasks
+
+## Running the Project
+
+To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+
 ```bash
-# Execute the project
-
+$ crewai run
 ```
 
----
+This command initializes the nomad_project Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-## **Key Features**
-- **Multi-agent collaboration**: Design workflows where agents specialize in roles (e.g., Researcher, Writer, Editor). 
-- **Local LLM integration**: Leverage models like Ollama or Hermes 3 for lightweight, on-device processing.  
-- **Custom tool support**: Extend functionality with tools for data collection, API calls, or document generation.  
-- **Modular architecture**: Easily swap agents, tasks, or tools to experiment with different automation scenarios.  
+This example, unmodified, will create a `report.md` file with the output of a research on LLMs in the root folder.
 
+<<<<<<< HEAD
+The project now also includes a **Selenium** based scraper tool. When running `PYTHONPATH=$(pwd)/src python -m nomad_project.main "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md` and `report.pdf`.
+=======
+The project now also includes a **Selenium** based scraper tool. When running `python main.py "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md`.
+>>>>>>> 1b14abcfa368ee4e3da0e191560588240b37c3c0
 
+## Understanding Your Crew
 
-## **Example Workflow**
-1. **Researcher** gathers data on a topic.  
-2. **Writer** compiles the data into a draft document.  
-3. **Editor** reviews and refines the content.  
-4. **Final Output** is generated as a polished document.  
+The nomad_project Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+
+## Support
+
+For support, questions, or feedback regarding the NomadProject Crew or crewAI.
+- Visit our [documentation](https://docs.crewai.com)
+- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
+- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
+- [Chat with our docs](https://chatg.pt/DWjSBZn)
+
+Let's create wonders together with the power and simplicity of crewAI.
 
