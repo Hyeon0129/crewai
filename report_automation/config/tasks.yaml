@@ -1,0 +1,34 @@
+keyword_task:
+  description: >
+    Analyze the topic and propose short search keywords.
+  expected_output: >
+    A comma-separated list of search terms.
+  agent: topic_analyzer
+
+search_task:
+  description: >
+    Use the keywords to search the web and collect HTML from the top five results.
+  expected_output: >
+    A list of HTML strings.
+  agent: web_searcher
+
+extract_task:
+  description: >
+    Extract meaningful text from each HTML page.
+  expected_output: >
+    Clean paragraphs from all pages.
+  agent: content_extractor
+
+summarize_task:
+  description: >
+    Summarize the combined text into sections.
+  expected_output: >
+    Markdown formatted summary.
+  agent: summarizer
+
+report_task:
+  description: >
+    Create a Markdown and PDF report with title, table of contents, body and references.
+  expected_output: >
+    report.md and report.pdf files in the root directory.
+  agent: report_generator
