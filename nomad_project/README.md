@@ -39,7 +39,11 @@ This command initializes the nomad_project Crew, assembling the agents and assig
 
 This example, unmodified, will create a `report.md` file with the output of a research on LLMs in the root folder.
 
+<<<<<<< HEAD
 The project now also includes a **Selenium** based scraper tool. When running `PYTHONPATH=$(pwd)/src python -m nomad_project.main "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md` and `report.pdf`.
+=======
+The project now also includes a **Selenium** based scraper tool. When running `python main.py "your topic"` the crew will automatically search the web for that topic and compile the findings into `report.md`.
+>>>>>>> 1b14abcfa368ee4e3da0e191560588240b37c3c0
 
 ## Understanding Your Crew
 
